@@ -78,7 +78,7 @@ class Lab5 extends GLJPanel implements GLEventListener, KeyListener{
         switch(objectNumber)
         {
 // RYSOWANIE KORKOCIAGU        
-        case 1: Korkociag(gl2, 1 , 11);
+        case 1: Korkociag(gl2, 1 , 20);
         break;
 // RYSOWANIE PIRAMIDY
         case 2: 
