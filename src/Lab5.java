@@ -115,46 +115,6 @@ class Lab5 extends GLJPanel implements GLEventListener, KeyListener{
         gl2.glTranslated(0,wysokosc,-4.5);
         glu.gluCylinder(glu.gluNewQuadric(),1.8,1.8,10,110,50);
     }
-// METODA WIELOKATU
-    
-    public void Wielokat(GL2 gl2,int wierzcholki){
-        gl2.glClear(GL2.GL_COLOR_BUFFER_BIT);
-// METODA ODPOWIEDZIALNA ZA POCZATEK RYSOWANIA WIELOKATU
-        gl2.glBegin(GL2.GL_POLYGON);
-// OKRESLAMY JAK BEDZIE SIE ZMIANIAC KATU
-        double inkrementacjaKata = 2 * Math.PI / wierzcholki;
-        for (int i = 1; i <= wierzcholki; i++) {
-// USTALANIE KOLORU
-            gl2.glColor3f(x/0.6f,(x+z)*x/0.4f,z/0.5f);
-// PUNKT X
-            x = (float) (promien * Math.cos(kat));
-// PUNKT Z              
-            z = (float) (promien * Math.sin(kat));
-// OKRESLENIE WSPOLRZEDNYCH
-            gl2.glVertex3f(x, -2.0f, z);
-            kat = i * inkrementacjaKata;
-        }
-// KONIEC RYSOWANIA
-        gl2.glEnd();
-    }
-// METODA ODPOWIEDZIALNA ZA TROJKATY
-    public void Trojkat(GL2 gl2){
-        gl2.glBegin(  GL2.GL_TRIANGLES );
-     // KOLOR
-        gl2.glColor3f( 0.5f, 0.5f, 1.0f );
-     // OKRESLENIE WSPOLRZEDNYCH
-        gl2.glVertex3f( -1.45f, -2.05f, 0.0f );
-        // KOLOR
-        gl2.glColor3f( 0.55f, -1.3f, 0.5f );
-     // OKRESLENIE WSPOLRZEDNYCH
-        gl2.glVertex3f( 0.0f, 5.0f, -4.85f );
-     // KOLOR
-        gl2.glColor3f( 1.5f, 1.65f, 1.80f ); 
-     // OKRESLENIE WSPOLRZEDNYCH        
-        gl2.glVertex3f( 1.45f, -2.0f, 0.0f );
-
-        gl2.glEnd();
-    }
 
     public void Piramida(GL2 gl2,double wielkosc)
     {
